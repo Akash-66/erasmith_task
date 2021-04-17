@@ -13,25 +13,25 @@ A = pd.read_csv('a.csv',sep=',')
 
 B = pd.read_csv('b.csv', sep=',')
 
-A.head()
+print(A.head())
 
-B.head()
+print(B.head())
 
-A.columns
+print(A.columns)
 
-B.columns
+print(B.columns)
 
 """A-B"""
 
-A[~A.device_type.isin(B.device_type)]
+print(A[~A.device_type.isin(B.device_type)])
 
-set(A['device_type']) - set(B['device_type'])
+print(set(A['device_type']) - set(B['device_type']))
 
 """B-A"""
 
-B[~B.device_name.isin(A.device_name)]
+print(B[~B.device_name.isin(A.device_name)])
 
-set(B['device_name']) - set(A['device_name'])
+print(set(B['device_name']) - set(A['device_name']))
 
 """New CSV with desired fields"""
 
@@ -44,7 +44,7 @@ a = {
 
 frame = pd.DataFrame(a)
 
-frame
+print(frame)
 
 frame.to_csv('new.csv', sep='\t')
 
